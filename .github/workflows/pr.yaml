@@ -2,8 +2,10 @@ on:
  pull_request:
    types:
      - closed
+     - opened
 
 jobs:
+  environment: DEV
   if_merged:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
