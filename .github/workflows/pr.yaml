@@ -16,7 +16,7 @@ jobs:
 
 
   if_opened:
-    if: github.event.pull_request.opened == true
+    if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' }}
     runs-on: ubuntu-latest
     environment: DEV
     steps:
