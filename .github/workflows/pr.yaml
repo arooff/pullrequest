@@ -11,3 +11,15 @@ jobs:
     steps:
     - run: |
        echo "The PR was merged on PROD ${{ vars.TARGET }}"
+
+    - name: PR merged event
+      if: github.event.pull_request.merged == true
+      environment: PROD
+      run: |
+        echo "The PR was merged on PROD ANDY"
+
+    - name: PR opened event
+      if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' }}
+      environment: DEV
+      run: |
+        echo "The PR was opened from DEV to PROD LESA" 
