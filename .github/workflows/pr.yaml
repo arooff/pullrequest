@@ -20,4 +20,4 @@ jobs:
     - name: PR opened event
       if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' }}
       run: |
-        echo "The PR was opened from DEV to PROD LESA" 
+        echo "The PR was opened from DEV to PROD LESA (OPENED)" 
