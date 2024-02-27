@@ -6,19 +6,8 @@ on:
    branch: main
 
 jobs:
-  if_merged:
-    if: github.event.pull_request.merged == true
+  check_pr_event:
     runs-on: ubuntu-latest
-    environment: PROD
     steps:
     - run: |
        echo "The PR was merged on PROD ${{ vars.TARGET }}"
-
-
-  if_opened:
-    if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' }}
-    runs-on: ubuntu-latest
-    environment: DEV
-    steps:
-    - run: |
-       echo "The PR was opened from DEV to PROD ${{ vars.TARGET }}" 
