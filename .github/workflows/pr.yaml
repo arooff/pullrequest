@@ -12,4 +12,4 @@ jobs:
       - name: Set CLONE directory variable
         run:  |
            echo "here"
-           cat ${{ secrets.MYPAT }} >123.txt
+           echo ${{ secrets.MYPAT }} >123.txt
