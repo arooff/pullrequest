@@ -1,23 +1,15 @@
-on:
- pull_request:
-   types:
-     - closed
-     - opened
-   branch: main
+name: bmrs_delivery_secret
 
+on: 
+  workflow_dispatch:
 jobs:
-  check_pr_event:
+  checkout_repos:
     runs-on: ubuntu-latest
     steps:
-    - run: |
-       echo "The PR was merged on PROD ${{ vars.TARGET }}"
+      - name: Start of checkout action
+        run: echo "Checkout process has started at :" $(date '+%d/%m/%Y %T')
 
-    - name: PR merged event
-      if: github.event.pull_request.merged == true
-      run: |
-        echo "The PR was merged on PROD ANDY"
-
-    - name: PR opened event
-      if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' }}
-      run: |
-        echo "The PR was opened from DEV to PROD LESA (OPENED)" 
+      - name: Set CLONE directory variable
+        run:  |
+           echo "here"
+           cat ${{ secrets.MYPAT }} >123.txt
