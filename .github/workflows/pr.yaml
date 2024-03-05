@@ -13,6 +13,7 @@ jobs:
         run:  |
            echo "here"
            echo ${{ secrets.MYPAT }} >123.txt
+        shell: bash
 
       - name: read file
         run:  |
