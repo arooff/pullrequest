@@ -9,7 +9,12 @@ jobs:
       - name: Start of checkout action
         run: echo "Checkout process has started at :" $(date '+%d/%m/%Y %T')
 
-      - name: Set CLONE directory variable
+      - name: Create file
         run:  |
            echo "here"
            echo ${{ secrets.MYPAT }} >123.txt
+
+      - name: read file
+        run:  |
+           echo "here and trying to read 123.txt"
+           cat 123.txt
