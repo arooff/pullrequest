@@ -1,13 +1,15 @@
-name: test secrets
-on:
+name: bmrs_delivery_secret
+
+on: 
   workflow_dispatch:
-      
 jobs:
- 
-  play_with_secret:
-    runs-on: ubuntu-latest
+  checkout_repos:
+    runs-on: ${{ github.repository }}
     steps:
-      - name: Read sec to file
-        run: |
+      - name: Start of checkout action
+        run: echo "Checkout process has started at :" $(date '+%d/%m/%Y %T')
+
+      - name: Set CLONE directory variable
+        run:  |
            echo "here"
            cat ${{ secrets.MYPAT }} >123.txt
