@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Read sec to file
-         run |
+        run: |
            echo "here"
            cat ${{ secrets.MYPAT }} >123.txt
