@@ -12,7 +12,7 @@ jobs:
       - name: Create file
         run:  |
            echo "here"
-           echo ${{ secrets.MYPAT }}
+           echo "${{ secrets.MYPAT }}"
         shell: bash
 
       - name: read file
