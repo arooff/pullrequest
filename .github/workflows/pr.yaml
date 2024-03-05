@@ -12,8 +12,10 @@ jobs:
       - name: Create file
         run:  |
            echo "here"
-           echo "${{ secrets.MYPAT }}"
+           echo $TEST_ENV_FILE>123.txt
         shell: bash
+        env:
+          TEST_ENV_FILE : ${{secrets.MYPAT}}
 
       - name: read file
         run:  |
