@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 jobs:
   checkout_repos:
-    runs-on: ${{ github.repository }}
+    runs-on: ubuntu-latest
     steps:
       - name: Start of checkout action
         run: echo "Checkout process has started at :" $(date '+%d/%m/%Y %T')
