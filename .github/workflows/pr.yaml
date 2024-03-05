@@ -20,10 +20,10 @@ jobs:
       - name: read file
         run:  |
            echo "here and trying to read 123.txt"
-           #cat 123.txt
+           cat 123.txt
 
-      #- name: upload file
-      #  uses: actions/upload-artifact@v4
-      #  with:
-      #   name: my-artifact
-      #   path: 123.txt
+      - name: upload file
+        uses: actions/upload-artifact@v4
+        with:
+         name: my-artifact
+         path: 123.txt
